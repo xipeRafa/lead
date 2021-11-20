@@ -16,8 +16,10 @@ const Orden = ({ orden, arrItems }) => {
 
     let img
 
-    {arrItems.map(el => el.id === orden.items[0].id ? img = el.pictureUrl[0] : el)}
-       
+   /*  {
+        arrItems.map((el) => el.id === orden.items[0].id ? img = el.pictureUrl[0] : el)
+    }
+ */
 
     return ( 
     <div className="w-full px-3 mb-4">
@@ -27,23 +29,34 @@ const Orden = ({ orden, arrItems }) => {
                 <div className="lg:w-7/12 xl:w-9/12 pl-5">
 
                     <h1>Id-Orden: <span className="text-yellow-600 text-lg">{orden.id}</span>  </h1>
-            
+
                     <p> <span className='text-gray-600'>comprador:</span> {orden.buyer.name} </p>
                     <p><span className='text-gray-600'>correo:</span>  {orden.buyer.email} </p>
                     <p><span className='text-gray-600'>telefono:</span> {orden.buyer.phone} </p>
                     <p><span className='text-gray-600'>fecha:</span>  {fullDate}, {hora}</p>
                     <p><span className='text-gray-600'>direccion:</span>  {orden.buyer.adress}</p>
                     <br/>
-                    <p>Id-producto: <span className="text-yellow-600 text-lg">{orden.items[0].id}</span> </p>
-                    <p><span className='text-gray-600'>producto:</span>  {orden.items[0].item}</p>
-                    <p><span className='text-gray-600'>precio:</span>  {orden.items[0].price}</p>
-                    <p><span className='text-gray-600'>cantidad:</span>  {orden.items[0].qty}</p>
-                    <br/>
+
+                    {orden.items.map((el, i) => (
+                        <div key={i}>
+                    <p>Id-producto: <span className="text-yellow-600 text-lg">{el.id}</span> </p>
+                         <p><span className='text-gray-600'>producto:</span>  {el.item}</p>
+                         <p><span className='text-gray-600'>precio:</span>  {el.price}</p>
+                         <p><span className='text-gray-600'>cantidad:</span>  {el.qty}</p>
+                       {
+                            arrItems.map(item => (
+                                 console.log(item.id === el.id ? img = item.pictureUrl[0] : null)
+                            ))
+                       }
+                       <img className="w-1/12 mb-5" src={img} alt="" />
+                         </div>
+                    ))}
+                     <br/>
                     <p className="text-gray-800 font-bold">Total a Pagar: $ {orden.total}</p>
            
                 </div>
                 <div className="lg:w-5/12 xl:w-3/12 m-2">
-                    <img src={img} alt="" /> 
+                <img src={img} alt="" />
                 </div>
             </div>
         </div>
