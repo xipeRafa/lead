@@ -1,7 +1,12 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {}
   },
-  variants: {},
-  plugins: [],
-}
+  variants: {
+    extend: {
+      backgroundColor: ["active"],
+      padding: ["hover"]
+    }
+  },
+  plugins: []
+};

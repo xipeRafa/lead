@@ -11,9 +11,9 @@ const Sidebar = () => {
                 <p className="mt-3 text-gray-600">Administra tu ecommerce en las siguientes opciones:</p>
 
                 <nav className="mt-10">
-                    <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-500 hover:text-gray-900 "  exact="true" to="/stock">Stock</NavLink>
+                    <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/stock">Stock</NavLink>
 
-                    <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-500 hover:text-gray-900"  exact="true" to="/">Ordenes</NavLink>
+                    <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/">Ordenes</NavLink>
                 </nav>
             </div>
         </div>
