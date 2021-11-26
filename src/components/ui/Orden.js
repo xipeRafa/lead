@@ -49,14 +49,17 @@ const Orden = ({ orden, arrItems }) => {
                             ))
                        }
                        <img className="w-1/12 mb-5" src={img} alt="" />
+                       
                          </div>
                     ))}
                      <br/>
                     <p className="text-gray-800 font-bold">Total a Pagar: $ {orden.total}</p>
            
                 </div>
-                <div className="lg:w-5/12 xl:w-3/12 m-2">
-                <img src={img} alt="" />
+                <div className="lg:w-5/12 xl:w-3/12 m-2 text-center text-white">
+                    <p className={orden.entregado ? 'bg-blue-500 p-5' : 'bg-gray-500 p-5'} >
+                      {orden.entregado ? 'Entregado por' : 'Sin Entregar'} {orden.deliver}
+                    </p>
                 </div>
             </div>
         </div>
