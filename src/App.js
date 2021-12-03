@@ -8,6 +8,7 @@ import Stock from './components/paginas/Stock';
 import Nuevo from './components/paginas/Nuevo';
 import Sidebar from './components/ui/Sidebar';
 import OrdenesTienda from './components/paginas/OrdenesTienda';
+import StockBajo from './components/paginas/StockBajo';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/stock" element={<Stock />  } />
                 <Route path="/nuevo" element={<Nuevo />  } />
                 <Route path="/ordenes-tienda" element={<OrdenesTienda /> } />
+                <Route path="/stock-bajo" element={<StockBajo /> } />
             </Routes>
           </div>
       </div>
