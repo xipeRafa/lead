@@ -48,11 +48,10 @@ const Orden = ({ orden, arrItems }) => {
                                  console.log(item.id === el.id ? img = item.pictureUrl[0] : null)
                             ))
                        }
-                       <img className="w-1/12 mb-5" src={img} alt="" />
+                       <img className="w-2/12" src={img} alt="" />
                        
                          </div>
                     ))}
-                     <br/>
                     <p className="text-gray-800 font-bold">Total a Pagar: $ {orden.total}</p>
            
                 </div>

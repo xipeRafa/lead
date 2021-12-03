@@ -54,7 +54,7 @@ const Nuevo = () => {
 
                 navigate('/stock'); // Redireccionar
             } catch (error) {
-              /*   console.log(error); */
+              console.log(error); 
             }
         }
     });
@@ -66,7 +66,7 @@ const Nuevo = () => {
     }
     const handleUploadError = error => {
         guardarSubiendo(false);
-       /*  console.log(error); */
+        console.log(error); 
     }
     const handleUploadSuccess = async name => {
         guardarProgreso(100);
