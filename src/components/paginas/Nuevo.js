@@ -11,8 +11,6 @@ const Nuevo = () => {
     const [progreso, guardarProgreso ] = useState(0);
     const [urlimagen, guardarUrlimagen] = useState([]);
     const [details, setDetails] = useState('');
-    console.log(details)
-    console.log(details.split(','))
 
     const { firebase } = useContext(FirebaseContext); 
 
@@ -56,7 +54,7 @@ const Nuevo = () => {
 
                 navigate('/stock'); // Redireccionar
             } catch (error) {
-                console.log(error);
+              /*   console.log(error); */
             }
         }
     });
@@ -68,7 +66,7 @@ const Nuevo = () => {
     }
     const handleUploadError = error => {
         guardarSubiendo(false);
-        console.log(error);
+       /*  console.log(error); */
     }
     const handleUploadSuccess = async name => {
         guardarProgreso(100);
@@ -83,7 +81,7 @@ const Nuevo = () => {
         guardarUrlimagen([url]);
     }
     const handlerDetail = v =>{
-        console.log(v)
+   /*      console.log(v) */
         setDetails([...details, v].join('')) 
     }
 
