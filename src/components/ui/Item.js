@@ -32,8 +32,10 @@ const Item = ({item}) => {
                             <span className="text-gray-700 font-bold">$ {price}</span> 
                         </p>
 
-                        <p className="text-gray-600 mb-4">Stock: {''}
-                            <span className="text-gray-700 font-bold">{stock}</span> 
+                        <p className="text-gray-600 mb-4 ">Stock: {''}
+                            <span className={stock <= 10 ? 'bg-red-600 px-20 py-2 font-bold text-white' : 'text-gray-700 font-bold'}>
+                                {stock}
+                            </span> 
                         </p>
                     </div>
                 </div>
