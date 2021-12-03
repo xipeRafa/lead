@@ -10,8 +10,11 @@ const Nuevo = () => {
     const [subiendo, guardarSubiendo] = useState(false);
     const [progreso, guardarProgreso ] = useState(0);
     const [urlimagen, guardarUrlimagen] = useState([]);
+    const [details, setDetails] = useState('');
+    console.log(details)
+    console.log(details.split(','))
 
-    const { firebase } = useContext(FirebaseContext);
+    const { firebase } = useContext(FirebaseContext); 
 
     const navigate = useNavigate();
 
@@ -24,7 +27,7 @@ const Nuevo = () => {
             description: '',
             initial:1,
             stock:'',
-            details:[],
+            details: [],
         }, 
         validationSchema: Yup.object({
             name: Yup.string()
@@ -36,18 +39,18 @@ const Nuevo = () => {
             price: Yup.number()
                         .min(1, 'Debes agregar un número')
                         .required('El Precio es obligatorio'),
+            details: Yup.string()
+                        .required('La details es obligatoria'),
             category: Yup.string()
                         .required('La Categoría es obligatoria'),
-            details: Yup.string()
-                        .required('Un Detalle es obligatorio'),
             description: Yup.string()
                         .min(10, 'La descripción debe ser más larga')
                         .required('La descripción es obligatoria'),
-                        
         }),
         onSubmit: name => {
             try {
                 name.pictureUrl = urlimagen;
+                name.details = details.split(',')
 
                 firebase.db.collection('items').add(name);
 
@@ -78,6 +81,10 @@ const Nuevo = () => {
                 .getDownloadURL();
 
         guardarUrlimagen([url]);
+    }
+    const handlerDetail = v =>{
+        console.log(v)
+        setDetails([...details, v].join('')) 
     }
 
     const handleProgress = progreso => { guardarProgreso(progreso) }
@@ -115,11 +122,12 @@ const Nuevo = () => {
                             <input 
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 id="details"
+                                name="details"
                                 type="text"
                                 placeholder="Detalle"
                                 value={formik.values.details}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={e=>handlerDetail(e.target.value)} 
                             />
                         </div>
                         { formik.touched.details && formik.errors.details ? (
@@ -128,7 +136,7 @@ const Nuevo = () => {
                                 <p>Anota algun Dato como Detalle</p>
                             </div>
                         ) : null }
-
+ 
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">Precio</label>
                             <input 

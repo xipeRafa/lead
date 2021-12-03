@@ -29,7 +29,7 @@ const Stock = () => {
     return ( 
         <>
             <Link to="/nuevo" className="bg-blue-800 hover:bg-blue-600 inline-block mb-5 p-2 text-white uppercase font-bold ml-3">
-                Agregar Producto +
+                Agregar Producto
             </Link>
 
             {items.map( item => (
