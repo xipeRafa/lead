@@ -13,7 +13,9 @@ const Sidebar = () => {
                 <nav className="mt-10">
                     <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/stock">Stock</NavLink>
 
-                    <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/">Ordenes</NavLink>
+                    <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/">Ordenes Para Repartir</NavLink>
+
+                    <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/ordenes-tienda">Ordenes Tienda Fisica</NavLink>
                 </nav>
             </div>
         </div>

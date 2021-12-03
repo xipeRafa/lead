@@ -7,6 +7,7 @@ import Ordenes from './components/paginas/Ordenes';
 import Stock from './components/paginas/Stock';
 import Nuevo from './components/paginas/Nuevo';
 import Sidebar from './components/ui/Sidebar';
+import OrdenesTienda from './components/paginas/OrdenesTienda';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/" element={<Ordenes />  } />
                 <Route path="/stock" element={<Stock />  } />
                 <Route path="/nuevo" element={<Nuevo />  } />
+                <Route path="/ordenes-tienda" element={<OrdenesTienda /> } />
             </Routes>
           </div>
       </div>
