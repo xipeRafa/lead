@@ -14,6 +14,7 @@ const OrdenesTienda = () => {
             firebase.db.collection('orders').onSnapshot(manejarSnapshot);
         }
         obtenerOrdenes();
+
         const obtenerItems = () => {
             firebase.db.collection('items').onSnapshot(manejarSnapshotItems);
         }
@@ -28,6 +29,7 @@ const OrdenesTienda = () => {
 
         setArrOrders(orders);
     } 
+
     function manejarSnapshotItems(snapshot) {
         const items = snapshot.docs.map(doc => {
             return { id: doc.id, ...doc.data() }
@@ -38,7 +40,8 @@ const OrdenesTienda = () => {
 
     return ( 
         <div className="w-full">
-            <h1 className="text-3xl font-light mb-4 ml-3">Ordenes Para Recoger en Tienda Fisica</h1>
+            <h1 className="text-3xl font-light mb-4 ml-3 border">Ordenes Para Recoger en Tienda Fisica</h1>
+            
 
             <div className="sm:w-full sm:flex-wrap">
                 {arrOrders.filter(el => el.noDeliver === true).map(orden => (
