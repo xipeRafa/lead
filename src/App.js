@@ -8,6 +8,12 @@ import Stock from './components/paginas/Stock';
 import Nuevo from './components/paginas/Nuevo';
 import Sidebar from './components/ui/Sidebar';
 import OrdenesTienda from './components/paginas/OrdenesTienda';
+
+import Quiroga from './components/paginas/Quiroga';
+import Navojoa from './components/paginas/Navojoa';
+import Perisur from './components/paginas/Perisur';
+import Progreso from './components/paginas/Progreso';
+
 import StockBajo from './components/paginas/StockBajo';
 
 function App() {
@@ -23,6 +29,12 @@ function App() {
                 <Route path="/stock" element={<Stock />  } />
                 <Route path="/nuevo" element={<Nuevo />  } />
                 <Route path="/ordenes-tienda" element={<OrdenesTienda /> } />
+
+                <Route path="/ordenes-quiroga" element={<Quiroga /> } />
+                <Route path="/ordenes-navojoa" element={<Navojoa /> } />
+                <Route path="/ordenes-perisur" element={<Perisur /> } />
+                <Route path="/ordenes-progreso" element={<Progreso /> } />
+
                 <Route path="/stock-bajo" element={<StockBajo /> } />
             </Routes>
           </div>

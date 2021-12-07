@@ -57,7 +57,7 @@ const Orden = ({ orden, arrItems }) => {
                 </div>
                 <div className="lg:w-5/12 xl:w-3/12 m-2 text-center text-white">
                     <p className={orden.entregado ? 'bg-blue-500 p-5' : 'bg-gray-500 p-5'} >
-                      {orden.entregado ? 'Entregado por' : 'Sin Entregar'} {orden.deliver}
+                      {orden.entregado ? 'Entregado por' : 'Sin Entregar'} {orden.deliver.slice(0, -10)}
                     </p>
                 </div>
             </div>
