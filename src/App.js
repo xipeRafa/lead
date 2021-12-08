@@ -15,6 +15,7 @@ import Perisur from './components/paginas/Perisur';
 import Progreso from './components/paginas/Progreso';
 
 import StockBajo from './components/paginas/StockBajo';
+import OrdenesNavojoa from './components/paginas/OrdenesNavojoa';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <div className="md:w-2/5 xl:w-4/5 p-6">
             <Routes>
                 <Route path="/" element={<Ordenes />  } />
+                <Route path="/navojoa" element={<OrdenesNavojoa />  } />
+
                 <Route path="/stock" element={<Stock />  } />
                 <Route path="/nuevo" element={<Nuevo />  } />
                 <Route path="/ordenes-tienda" element={<OrdenesTienda /> } />

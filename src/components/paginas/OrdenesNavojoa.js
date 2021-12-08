@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { FirebaseContext } from '../../firebase';
 import Orden from '../ui/Orden';
 
-const Ordenes = () => {
+const OrdenesNavojoa = () => {
 
     const { firebase } = useContext(FirebaseContext);
 
@@ -38,12 +38,12 @@ const Ordenes = () => {
 
     return ( 
         <div className="w-full">
-            <h1 className="text-3xl font-light mb-4 ml-3">Ordenes Para Repartir Hermosillo</h1>
+            <h1 className="text-3xl font-light mb-4 ml-3">Ordenes Para Repartir Navojoa</h1>
 
             <div className="sm:w-full sm:flex-wrap">
                 {arrOrders
                     .filter(el => el.noDeliver !== true)
-                    .filter(el => el.city === 'hermosillo')
+                    .filter(el => el.city === 'navojoa')
                     .map(orden => (
                     <Orden
                         key={orden.id}
@@ -56,4 +56,4 @@ const Ordenes = () => {
      );
 }
  
-export default Ordenes;
+export default OrdenesNavojoa;
