@@ -26,6 +26,11 @@ const Nuevo = () => {
             initial:1,
             stock:'',
             details: [],
+            cseri:0,
+            quiroga:0,
+            perisur:0,
+            progreso:0,
+            navojoa:0,
         }, 
         validationSchema: Yup.object({
             name: Yup.string()
@@ -156,7 +161,9 @@ const Nuevo = () => {
                         ) : null }
 
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="stock">Stock</label>
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="stock">
+                                Stock Global
+                            </label>
                             <input 
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 id="stock"
