@@ -9,6 +9,8 @@ const Item = ({item}) => {
             progreso,
             navojoa  } = item;
 
+            let checkGlobal = cseri+quiroga+perisur+progreso+navojoa
+
     return ( 
         <div className="w-full px-3 mb-4">
             <div className="p-5 shadow-md bg-white">
@@ -38,7 +40,10 @@ const Item = ({item}) => {
                         </p>
 
                         <p className="text-gray-600 mb-4">Stock Global: {''}
-                            <span className={stock <= 10 ? 'bg-red-600 px-20 py-2 font-bold text-white' : 'text-gray-700 font-bold'}>
+                            <span className={stock <= 10 ? 'bg-red-600 px-20 py-2 font-bold text-white' 
+                                                         : stock !== checkGlobal 
+                                                         ? 'bg-yellow-500 px-4 py-2 font-bold ' 
+                                                         : 'text-gray-700 font-bold'}>
                                 {stock}
                             </span> 
                         </p>
@@ -46,7 +51,9 @@ const Item = ({item}) => {
                     <div className="border xl:w-2/12 pl-4 pt-4">
                         <h3 className='mb-5'>Stock Local</h3>
                         <p className="text-gray-600 mb-4">
-                            Cam Seri: <span className={cseri <= 10 ? 'bg-red-600 px-2 py-2 font-bold text-white' : 'text-gray-700 font-bold'}>
+                            Cam Seri: <span className={
+                                cseri <= 10 ? 'bg-red-600 px-2 py-2 font-bold text-white' 
+                                            : 'text-gray-700 font-bold'}>
                                 {cseri}
                             </span>
                         </p>
@@ -69,6 +76,14 @@ const Item = ({item}) => {
                             Navojoa: <span className={navojoa <= 10 ? 'bg-red-600 px-2 py-2 font-bold text-white' : 'text-gray-700 font-bold'}>
                                 {navojoa}
                             </span>
+                        </p>
+                        <p className="text-gray-600 mb-4">
+                            Global: <span className={stock !== checkGlobal ? 'bg-yellow-500 px-4 py-2 font-bold ' : 'text-gray-700 font-bold'}>
+                                {checkGlobal}
+                            </span>
+                        </p>
+                        <p className="text-gray-700">
+                            {stock !== checkGlobal ? 'No son Iguales' : '✓'}
                         </p>
                     </div>
                 </div>

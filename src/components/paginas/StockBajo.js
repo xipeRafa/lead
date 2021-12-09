@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { FirebaseContext } from '../../firebase';
 
 import Item from '../ui/Item';
+import Stock from './Stock';
 
 const StockBajo = () => {
 
@@ -11,13 +12,10 @@ const StockBajo = () => {
 
 
     const [editStock, setEditStock]=useState()
-    console.log(editStock)
 
     const [editStockId, setEditStockId]=useState()
-    console.log(editStock)
 
     const [selectState, setSelectState] = useState('');
-    console.log(selectState)
 
     const handleSelect = (e) => {
       setSelectState(e.target.value);
@@ -25,6 +23,12 @@ const StockBajo = () => {
 
     const handlerSubmit = (e)=>{
         e.preventDefault()
+
+        if(editStock === '' || editStockId === '' || selectState === ''){
+            alert('Campo Vacio')
+            return
+        }
+
         UStock(editStockId, selectState)
     }
 
@@ -77,7 +81,7 @@ const StockBajo = () => {
             </select> 
 
             <input  className='m-2 p-2 text-center' type="number" 
-                    placeholder='Nueva Cantidad'
+                    placeholder='Nueva Cantidad' min="0"
                     onChange={e=>setEditStock(e.target.value)}/>  
              
             <input  className='p-2 bg-gray-600 text-white hover:bg-blue-400 rounded' 

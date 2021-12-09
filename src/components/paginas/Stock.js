@@ -11,13 +11,10 @@ const Stock = () => {
     const { firebase } = useContext(FirebaseContext);
 
     const [editStock, setEditStock]=useState()
-    console.log(editStock)
 
     const [editStockId, setEditStockId]=useState()
-    console.log(editStock)
 
     const [selectState, setSelectState] = useState('');
-    console.log(selectState)
 
     const handleSelect = (e) => {
       setSelectState(e.target.value);
@@ -25,6 +22,12 @@ const Stock = () => {
 
     const handlerSubmit = (e)=>{
         e.preventDefault()
+        
+        if(editStock === '' || editStockId === '' || selectState === ''){
+                alert('Campo Vacio')
+                return
+        }
+        
         UStock(editStockId, selectState)
     }
 
@@ -51,6 +54,9 @@ const Stock = () => {
         });
         setItems(items);
     }
+
+
+
 
 
     return ( 
@@ -81,7 +87,7 @@ const Stock = () => {
             type="number" onChange={e=>setEditStock(e.target.value)}/>  
      
     <input  className='p-2 bg-gray-600 text-white hover:bg-blue-400 rounded' 
-            type="submit" value='Actualizar Stock' />
+            type="submit" value='Actualizar Stock'/>
 </form>
 
             {items.map( item => (
