@@ -24,7 +24,7 @@ function App() {
       <div className="md:flex min-h-screen">
           <Sidebar />
 
-          <div className="md:w-2/5 xl:w-4/5 p-6">
+          <div className=" sm:w-4/5 p-6">
             <Routes>
                 <Route path="/" element={<Ordenes />  } />
                 <Route path="/navojoa" element={<OrdenesNavojoa />  } />
