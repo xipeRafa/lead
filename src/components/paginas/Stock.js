@@ -61,13 +61,9 @@ const Stock = () => {
 
     return ( 
         <>
-            <Link to="/nuevo" className="bg-blue-800 hover:bg-blue-600 inline-block mb-5 p-2 text-white uppercase font-bold ml-3">
-                Agregar Producto
-            </Link>
+        <h1 className="text-3xl font-light mb-4 ml-3">Stock Global</h1>
 
-            <div className='text-2xl text-yellow-600 ml-3'>{editStockId}</div>
-
-<form onSubmit={handlerSubmit} className='mb-5 border ml-3 d-flex'>
+<form onSubmit={handlerSubmit} className='mb-5 ml-1 d-flex'>
     <input  className='m-2 p-2 w-1/4'
              placeholder='ID Producto'
             type="text" onChange={e=>setEditStockId(e.target.value)}/>  
@@ -82,11 +78,11 @@ const Stock = () => {
                     <option value="navojoa">Navojoa</option>
     </select> 
 
-    <input  className='m-2 p-2 text-center' 
+    <input  className='m-2 p-2 text-center w-1/5' 
              placeholder='Nueva Cantidad'
             type="number" onChange={e=>setEditStock(e.target.value)}/>  
      
-    <input  className='p-2 bg-gray-600 text-white hover:bg-blue-400 rounded' 
+    <input  className='p-2 bg-blue-700 text-white hover:bg-blue-400 rounded w-1/4' 
             type="submit" value='Actualizar Stock'/>
 </form>
 

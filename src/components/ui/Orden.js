@@ -35,7 +35,6 @@ const Orden = ({ orden, arrItems }) => {
                     <p><span className='text-gray-600'>telefono:</span> {orden.buyer.phone} </p>
                     <p><span className='text-gray-600'>fecha:</span>  {fullDate}, {hora}</p>
                     <p><span className='text-gray-600'>direccion:</span>  {orden.buyer.adress}</p>
-                    <br/>
 
                     {orden.items.map((el, i) => (
                         <div key={i}>

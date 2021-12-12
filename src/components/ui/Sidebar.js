@@ -11,6 +11,9 @@ const Sidebar = () => {
                 <p className="mt-3 text-gray-600">Administra tu ecommerce en las siguientes opciones:</p>
 
                 <nav className="mt-10">
+
+                    <NavLink to="/nuevo" className="bg-blue-800 hover:bg-blue-600 inline-block mb-5 p-2 text-white uppercase font-bold ml-5">Agregar Producto</NavLink>
+
                     <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/stock">Stock Global</NavLink>
 
                     <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/stock-bajo">Productos Stock Bajo</NavLink>
@@ -32,6 +35,8 @@ const Sidebar = () => {
                     <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/ordenes-perisur">Ordenes Tienda Perisur</NavLink>
 
                     <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/ordenes-progreso">Ordenes Tienda Progreso</NavLink>
+
+            <br/>
 
                     <NavLink className="p-1 text-gray-400 block text-yellow-500 hover:bg-orange-300 hover:text-gray-900 a"  exact="true" to="/ordenes-navojoa">Ordenes Tienda Navojoa</NavLink>
                 </nav>
