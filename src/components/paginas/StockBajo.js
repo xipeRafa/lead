@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { FirebaseContext } from '../../firebase';
 
 import Item from '../ui/Item';
-import Stock from './Stock';
 
 const StockBajo = () => {
 
