@@ -17,6 +17,8 @@ import Progreso from './components/paginas/Progreso';
 import StockBajo from './components/paginas/StockBajo';
 import OrdenesNavojoa from './components/paginas/OrdenesNavojoa';
 
+import banner from './bannerGym.png'
+
 function App() {
   return (
     <FirebaseContext.Provider value={{ firebase }} >
@@ -27,6 +29,7 @@ function App() {
           <div className=" sm:w-4/5 p-6">
             <Routes>
                 <Route path="/" element={<Ordenes />  } />
+                <Route path="/lead" element={<img src={banner} alt="siii" />  } />
                 <Route path="/navojoa" element={<OrdenesNavojoa />  } />
 
                 <Route path="/stock" element={<Stock />  } />
