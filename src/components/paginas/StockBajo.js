@@ -63,11 +63,11 @@ const StockBajo = () => {
         <h1 className="text-3xl font-light mb-4 ml-3">Productos Con Stock Bajo -10</h1>
 
         <form onSubmit={handlerSubmit} className='mb-5 ml-1 d-flex'>
-            <input  className='m-2 p-2 w-1/4' type="text" 
+            <input  className='m-1 p-2 w-full md:w-1/4' type="text" 
                     placeholder='ID Producto'
                     onChange={e=>setEditStockId(e.target.value)}/>  
 
-            <select className="m-1 w-1/4" onChange={handleSelect} value={selectState} style={{padding:'9.6px'}}>
+            <select className="m-1 w-full md:w-1/4" onChange={handleSelect} value={selectState} style={{padding:'9.6px'}}>
                             <option value="" disabled selected>Elija una Sucursal</option>
                             <option value="stock">Stock Global</option>
                             <option value="cseri">Camino del Seri</option>
@@ -77,11 +77,11 @@ const StockBajo = () => {
                             <option value="navojoa">Navojoa</option>
             </select> 
 
-            <input  className='m-2 p-2 w-1/5 text-center' type="number" 
+            <input  className='m-1 p-2 w-full md:w-1/5 text-center' type="number" 
                     placeholder='Nueva Cantidad' min="0"
                     onChange={e=>setEditStock(e.target.value)}/>  
              
-            <input  className='p-2 bg-blue-700 w-1/4  text-white hover:bg-blue-400 rounded' 
+            <input  className='p-2 bg-blue-700 m-1 w-full md:w-1/4  text-white hover:bg-blue-400 rounded' 
                     type="submit" value='Actualizar Stock' />
         </form>
 
